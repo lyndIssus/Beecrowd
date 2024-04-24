@@ -1,0 +1,43 @@
+using System;
+using System.Globalization;
+
+class URI{
+    static void Main(string[] args){
+    while(true){
+    int contador = 0;
+    int contazero = 0;
+    String text = Console.ReadLine();
+    char[] caracteres = new char[text.Length-2];
+    char erro = 'a';
+    foreach(char c in text){
+        if(contador == 0){
+            erro = c;
+        }else if(contador >= 2){
+        caracteres[contador-2] = c;}
+        contador+=1; 
+    }
+    if(erro == '0' && caracteres[0] =='0'){
+        break;
+    }
+    string tex = new string(caracteres);
+    for(int z = 0; z< caracteres.Length;z++){
+        if(caracteres[z]=='0' && caracteres[z]!= erro){
+            contazero+=1;
+        }else if(caracteres[z]!='0' && caracteres[z]!= erro){
+            break;
+        }
+    }
+    string aaaaaaaa = erro.ToString();
+    tex = tex.Replace(aaaaaaaa,string.Empty);
+    tex = tex.Remove(0,contazero);
+    
+    
+    if(tex == "" ||double.Parse(tex)== 0){
+        Console.WriteLine(0);
+    }else{
+    Console.WriteLine(tex);}
+    
+    }
+
+    
+    }}  
